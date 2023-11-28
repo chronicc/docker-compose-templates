@@ -1,0 +1,16 @@
+---
+version: '3.8'
+
+services:
+  chatgpt-frontend:
+    image: ghcr.io/cogentapps/chat-with-gpt:release
+    container_name: chatgpt-frontend
+    ports:
+      - 127.0.0.1:3000:3000
+    volumes:
+      - data:/app/data
+      - ./config.yaml:/app/data/config.yaml
+    restart: always
+
+volumes:
+  data:
