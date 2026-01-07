@@ -1,0 +1,19 @@
+---
+services:
+  app:
+    image: triliumnext/trilium
+    environment:
+      TRILIUM_DATA_DIR: "/data"
+    networks:
+      - default
+    ports:
+      - "8080:8080"
+    volumes:
+      - trilium_data:/data
+
+networks:
+  default:
+    internal: true
+
+volumes:
+  trilium_data:
